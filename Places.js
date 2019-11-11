@@ -11,7 +11,7 @@ Places.navigationOptions = {
 export default function Places({ navigation }) {
   const [place, setPlace] = useState('')
   const [placeList, setPlaceList] = useState([])
-  const [hideMenu, setHideMenu] = useState(false)
+  const [hideMenu, setHideMenu] = useState(true)
   const shadows = { shadowColor: colors.grey5, shadowOffset: { width: 0, height: 5 }, shadowOpacity: 25 }
 
   const savePlace = () => {
@@ -83,23 +83,24 @@ export default function Places({ navigation }) {
         onChangeText={(address) => setPlace(address)}
         value={place}
       />
-    <Button
-      title="Save"
-      onPress={savePlace}
-      disabled={!place}
-      icon={
-        <Icon
-          name="save"
-          size={16}
-          color={!place ? 'darkgray' : 'white'}
-          style={{ padding: 10 }}
-        />
-      }
-      style={{ margin: 10 }}
-    />
+      <Button
+        title="Save"
+        onPress={savePlace}
+        disabled={!place}
+        icon={
+          <Icon
+            name="save"
+            size={16}
+            color={!place ? 'darkgray' : 'white'}
+            style={{ padding: 10 }}
+          />
+        }
+        style={{ margin: 10 }}
+      />
     </View>
     <View>
       <Button
+        buttonStyle={{ backgroundColor: colors.primary }}
         onPress={this.onHideMenu}
         icon={
           <Icon

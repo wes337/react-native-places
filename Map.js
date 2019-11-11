@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { Text, Button } from 'react-native-elements'
+import { Text } from 'react-native-elements'
 import MapView, { Marker, Callout } from 'react-native-maps'
 
 MapScreen.navigationOptions = {
@@ -22,10 +22,6 @@ export default function MapScreen({ route, navigation }) {
     longitudeDelta: 0.0221,
   }
 
-  getDirections = () => {
-    console.log(place)
-  }
-
   return (
     <MapView
       style={{flex: 1}}
@@ -37,10 +33,7 @@ export default function MapScreen({ route, navigation }) {
       >
         <Callout>
           <View>
-            <Button
-              title="Get Directions"
-              onPress={() => getDirections()}
-            />
+            <Text>{place.title}</Text>
           </View>
         </Callout>
       </Marker>
