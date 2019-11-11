@@ -144,7 +144,7 @@ export default function Places({ navigation }) {
       />
       <Divider style={{ margin: 10 }}/>
       {loading
-        ? <Text h2>Loading...</Text>
+        ? <Text style={{ fontSize: 18, color: colors.grey0, textAlign: 'center' }}>Loading...</Text>
         : placeList <= 0
           ? <View style={{ height: hideMenu ? 500 : 350, alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ fontSize: 18 }}>You have no places...</Text>
