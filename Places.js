@@ -116,6 +116,16 @@ export default function Places({ navigation }) {
         ? <View style={{ height: hideMenu ? 500 : 350, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ fontSize: 18 }}>You have no places...</Text>
             <Text style={{ fontSize: 18 }}>Add one to get started!</Text>
+            {hideMenu && <Button
+              buttonStyle={{ backgroundColor: 'white', borderRadius: 50, marginHorizontal: 5, ...shadows }}
+              onPress={this.onHideMenu}
+              icon={<Icon
+                name="plus"
+                size={14}
+                color={colors.primary}
+                style={{ marginTop: 10, padding: 5 }}
+              />}
+            />}
           </View>
         : <FlatList
           keyExtractor={item => item.key.toString()}
