@@ -26,12 +26,14 @@ export default function Places({ navigation }) {
           title: responseObject.name || responseObject.formatted_address || place,
           key: responseObject.place_id || responseObject.id,
         }
+        LayoutAnimation.spring()
         setPlaceList([...placeList, placeObject])
       })
       .catch(err => Alert.alert('Error:', err))
   }
 
   removePlace = (placeKey) => {
+    LayoutAnimation.spring()
     setPlaceList(placeList.filter(place => place.key !== placeKey))
   }
 
